@@ -3,10 +3,11 @@
   "version": "2.0.0",
   "homepage": "http://lokeshdhakar.com/projects/color-thief/",
   "authors": [
-    "Lokesh Dhakar"
+    "Lokesh Dhakar",
+    "Florian Albertz"
   ],
   "description": "Grab the dominant color or color palette from an image.",
-  "main": "js/color-thief.js",
+  "main": "dist/color-thief.js",
   "keywords": [
     "color",
     "palette",
@@ -21,7 +22,6 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "test"
   ]
 }

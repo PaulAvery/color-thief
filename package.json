@@ -1,12 +1,14 @@
 {
   "name": "color-thief",
   "version": "2.0.0",
-  "private": true,
   "author": {
     "name": "Lokesh Dhakar",
     "email": "lokesh.dhakar@gmail.com",
     "url": "http://lokeshdhakar.com/"
   },
+  "contributors": [
+    "Florian Albertz <flo.albertz@gmail.com>"
+  ],
   "description": "Get the dominant color or color palette from an image.",
   "keywords": [
     "color",
@@ -17,13 +19,12 @@
     "photo",
     "canvas"
   ],
-  "homepage": "http://lokeshdhakar.com/projects/color-thief/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lokesh/color-thief.git"
+    "url": "https://github.com/PaulAvery/color-thief.git"
   },
   "bugs": {
-    "url": "https://github.com/lokesh/color-thief/issues"
+    "url": "https://github.com/PaulAvery/color-thief/issues"
   },
   "licenses": [
     {
