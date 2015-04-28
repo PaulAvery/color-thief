@@ -2,7 +2,7 @@
   "name": "color-thief",
   "description": "Get the dominant color or color palette from an image.",
   "version": "2.0.0",
-  "main": "lib/color-thief.js",
+  "main": "lib/ColorThief.js",
   "author": {
     "name": "Lokesh Dhakar",
     "email": "lokesh.dhakar@gmail.com",
@@ -28,9 +28,11 @@
   "scripts": {
     "prepublish": "make test",
     "test": "make test"
-  }
+  },
   "devDependencies": {
     "babel": "^5.1.13",
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
     "eslint": "^0.20.0",
     "mocha": "^2.2.4",
     "must": "^0.12.0",
@@ -42,8 +44,14 @@
       "node": true
     },
     "rules": {
-      "curly": [2, "multi-line"],
-      "quotes": [2, "single"]
+      "curly": [
+        2,
+        "multi-line"
+      ],
+      "quotes": [
+        2,
+        "single"
+      ]
     },
     "ecmaFeatures": {
       "modules": true

@@ -2,12 +2,16 @@ BIN = ./node_modules/.bin
 SRC = $(wildcard src/*.js)
 LIB = $(SRC:src/%.js=lib/%.js)
 
-build: babel
+build: babel browser
+
 babel: $(LIB)
+
+browser: src/browser/require.js
+	@$(BIN)/browserify src/browser/require.js -t babelify --outfile lib/browser.js
 
 lib/%.js: src/%.js
 	@mkdir -p $(@D)
-	@$(BIN)/babel $< --out-file $@ --source-maps-inline --blacklist regenerator
+	@$(BIN)/babel $< --out-file $@ --source-maps-inline
 
 clean:
 	@rm -rf lib
