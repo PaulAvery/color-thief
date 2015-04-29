@@ -1,4 +1,5 @@
-#Color Thief
+# Color Thief
+[![Build Status](https://img.shields.io/travis/PaulAvery/node-color-thief.svg?style=flat)](https://travis-ci.org/PaulAvery/node-color-thief)
 
 A script for grabbing the color palette from an image. This is a fork of the original [color-thief](https://github.com/lokesh/color-thief/) library, modified to work in node as well as in the browser.
 
@@ -6,7 +7,7 @@ Further changes have been made to code structure as well as tests and general or
 
 A demo may be found on the original projects site: [lokeshdhakar.com](http://lokeshdhakar.com/projects/color-thief)
 
-##How to use
+## How to use
 In node simply require:
 
 ```js
@@ -23,7 +24,7 @@ In a browser simply reference the main file, which will provide `window.ColorThi
 <script src="node_modules/color-thief/lib/browser.min.js"></script>
 ```
 
-###Get the dominant color from an image
+### Get the dominant color from an image
 ```js
 var colorThief = new ColorThief();
 colorThief.getColor(sourceImage);
@@ -34,7 +35,7 @@ getColor(sourceImage[, quality])
 returns {r: num, g: num, b: num}
 ```
 
-###Build a color palette from an image
+### Build a color palette from an image
 
 In this example, we build an 8 color palette.
 
@@ -52,23 +53,23 @@ returns [ [num, num, num], [num, num, num], ... ]
 To run the tests, simply call `make test`.
 Tests may be found in the `test` directory and utilize [mocha](http://mochajs.org/) as well as [phantomjs](http://phantomjs.org/) for testing in the browser as well as node.
 
-##Credits and license
+## Credits and license
 
-###Author
+### Author
 by Lokesh Dhakar  
 [lokeshdhakar.com](http://www.lokeshdhakar.com)
 [twitter.com/lokesh](http://twitter.com/lokesh)
 
-###Fork Maintainer
+### Fork Maintainer
 Florian Albertz
 [Github](http://github.com/PaulAvery)
 
-###Thanks
+### Thanks
 * Nick Rabinowitz - For creating quantize.js.
 * John Schulz - For clean up and optimization. @JFSIII
 * Nathan Spady - For adding drag and drop support to the demo page.
 
-###License
+### License
 Licensed under the [Creative Commons Attribution 2.5 License](http://creativecommons.org/licenses/by/2.5/)
 
 * Free for use in both personal and commercial projects.
