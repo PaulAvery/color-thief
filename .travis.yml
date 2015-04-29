@@ -6,4 +6,4 @@ node_js:
 
 before_install:
   - sudo chown -R $USER /usr/local
-  - sh install
+  - sh test/install.sh
