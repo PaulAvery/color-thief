@@ -34,7 +34,7 @@ export default class ColorThief {
 	 *
 	 * */
 
-	getColor(sourceImage, quality) {
+	getColor(sourceImage, quality = 10) {
 		var palette = this.getPalette(sourceImage, 5, quality);
 		var dominantColor = palette[0];
 		return dominantColor;
@@ -57,15 +57,7 @@ export default class ColorThief {
 	 *
 	 *
 	 */
-	getPalette(sourceImage, colorCount, quality) {
-
-		if (typeof colorCount === 'undefined') {
-			colorCount = 10;
-		}
-		if (typeof quality === 'undefined') {
-			quality = 10;
-		}
-
+	getPalette(sourceImage, colorCount = 10, quality = 10) {
 		// Create custom CanvasImage object
 		var image = new CanvasImage(sourceImage);
 		var imageData = image.getImageData();
@@ -74,12 +66,13 @@ export default class ColorThief {
 
 		// Store the RGB values in an array format suitable for quantize function
 		var pixelArray = [];
-		for (var i = 0, offset, r, g, b, a; i < pixelCount; i = i + quality) {
+		for (let i = 0, offset, r, g, b, a; i < pixelCount; i = i + quality) {
 			offset = i * 4;
 			r = pixels[offset + 0];
 			g = pixels[offset + 1];
 			b = pixels[offset + 2];
 			a = pixels[offset + 3];
+
 			// If pixel is mostly opaque and not white
 			if (a >= 125) {
 				if (!(r > 250 && g > 250 && b > 250)) {
