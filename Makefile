@@ -5,9 +5,13 @@ LIB = $(SRC:src/%.js=lib/%.js)
 build: babel browser
 
 babel: $(LIB)
+browser: lib/browser.min.js
 
-browser: src/browser/require.js
-	@$(BIN)/browserify src/browser/require.js -t babelify --outfile lib/browser.js
+lib/browser.js: $(SRC)
+	@$(BIN)/browserify src/browser/require.js -t babelify -o $@
+
+lib/browser.min.js: lib/browser.js
+	@$(BIN)/uglifyjs $< -o $@ --comments
 
 lib/%.js: src/%.js
 	@mkdir -p $(@D)
