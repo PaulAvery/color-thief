@@ -1,39 +1,40 @@
 /*
-  CanvasImage Class
-  Class that wraps the html image element and canvas.
-  It also simplifies some of the canvas context manipulation
-  with a set of helper functions.
-*/
-var CanvasImage = function (image) {
-    this.canvas  = document.createElement('canvas');
-    this.context = this.canvas.getContext('2d');
+ * CanvasImage Class
+ * Class that wraps the html image element and canvas.
+ * It also simplifies some of the canvas context manipulation
+ * with a set of helper functions.
+ */
 
-    document.body.appendChild(this.canvas);
+export default class CanvasImage {
+	constructor(image) {
+		this.canvas  = document.createElement('canvas');
+		this.context = this.canvas.getContext('2d');
 
-    this.width  = this.canvas.width  = image.width;
-    this.height = this.canvas.height = image.height;
+		document.body.appendChild(this.canvas);
 
-    this.context.drawImage(image, 0, 0, this.width, this.height);
-};
+		this.width  = this.canvas.width  = image.width;
+		this.height = this.canvas.height = image.height;
 
-CanvasImage.prototype.clear = function () {
-    this.context.clearRect(0, 0, this.width, this.height);
-};
+		this.context.drawImage(image, 0, 0, this.width, this.height);
+	}
 
-CanvasImage.prototype.update = function (imageData) {
-    this.context.putImageData(imageData, 0, 0);
-};
+	clear() {
+		this.context.clearRect(0, 0, this.width, this.height);
+	}
 
-CanvasImage.prototype.getPixelCount = function () {
-    return this.width * this.height;
-};
+	update(imageData) {
+		this.context.putImageData(imageData, 0, 0);
+	}
 
-CanvasImage.prototype.getImageData = function () {
-    return this.context.getImageData(0, 0, this.width, this.height);
-};
+	getPixelCount() {
+		return this.width * this.height;
+	}
 
-CanvasImage.prototype.removeCanvas = function () {
-    this.canvas.parentNode.removeChild(this.canvas);
-};
+	getImageData() {
+		return this.context.getImageData(0, 0, this.width, this.height);
+	}
 
-module.exports = CanvasImage;
+	removeCanvas() {
+		this.canvas.parentNode.removeChild(this.canvas);
+	}
+}
