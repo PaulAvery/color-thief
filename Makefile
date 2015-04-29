@@ -38,4 +38,4 @@ release-patch: test
 
 publish:
 	git push --tags origin HEAD:master
-	npm publish
+	npm publish --access=public
