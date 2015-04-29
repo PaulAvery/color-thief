@@ -16,7 +16,7 @@
  */
 
 var CanvasImage = require('./CanvasImage');
-var MMCQ = require('./mmcq');
+var quantize = require('quantize');
 
 var ColorThief = function () {};
 
@@ -90,7 +90,7 @@ ColorThief.prototype.getPalette = function(sourceImage, colorCount, quality) {
 
     // Send array to quantize function which clusters values
     // using median cut algorithm
-    var cmap    = MMCQ.quantize(pixelArray, colorCount);
+    var cmap    = quantize(pixelArray, colorCount);
     var palette = cmap.palette();
 
     // Clean up
