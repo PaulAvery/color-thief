@@ -34,7 +34,7 @@ export default class ColorThief {
 	 * */
 
 	getColor(sourceImage, quality) {
-		var palette       = this.getPalette(sourceImage, 5, quality);
+		var palette = this.getPalette(sourceImage, 5, quality);
 		var dominantColor = palette[0];
 		return dominantColor;
 	}
@@ -66,9 +66,9 @@ export default class ColorThief {
 		}
 
 		// Create custom CanvasImage object
-		var image      = new CanvasImage(sourceImage);
-		var imageData  = image.getImageData();
-		var pixels     = imageData.data;
+		var image = new CanvasImage(sourceImage);
+		var imageData = image.getImageData();
+		var pixels = imageData.data;
 		var pixelCount = image.getPixelCount();
 
 		// Store the RGB values in an array format suitable for quantize function
@@ -89,7 +89,7 @@ export default class ColorThief {
 
 		// Send array to quantize function which clusters values
 		// using median cut algorithm
-		var cmap    = quantize(pixelArray, colorCount);
+		var cmap = quantize(pixelArray, colorCount);
 		var palette = cmap.palette();
 
 		// Clean up
