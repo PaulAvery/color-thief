@@ -1,7 +1,7 @@
 {
   "name": "@paulavery/color-thief",
   "description": "Get the dominant color or color palette from an image.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "lib/ColorThief.js",
   "author": {
     "name": "Lokesh Dhakar",
