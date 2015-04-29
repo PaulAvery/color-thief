@@ -15,13 +15,13 @@ lib/browser.min.js: lib/browser.js
 
 lib/%.js: src/%.js
 	@mkdir -p $(@D)
-	@$(BIN)/babel $< --out-file $@ --source-maps-inline
+	@$(BIN)/babel $< --out-file $@
 
 clean:
 	@rm -rf lib
 
 test: build lint
-	@$(BIN)/mocha --harmony --require must
+	@$(BIN)/mocha --require must
 
 lint:
 	@$(BIN)/eslint src test
