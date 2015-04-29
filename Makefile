@@ -21,7 +21,8 @@ clean:
 	@rm -rf lib
 
 test: build lint
-	@$(BIN)/mocha --require must
+	@$(BIN)/mocha
+	@$(BIN)/mocha-phantomjs test/browser/index.html
 
 lint:
 	@$(BIN)/eslint src test
