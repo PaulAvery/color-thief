@@ -1,11 +1,12 @@
-/*!
- * Color Thief
- * by Lokesh Dhakar - http://www.lokeshdhakar.com
- *
- * License
- * -------
+/* 
+ * @license
  * Creative Commons Attribution 2.5 License:
  * http://creativecommons.org/licenses/by/2.5/
+ */
+
+/*
+ * Color Thief
+ * by Lokesh Dhakar - http://www.lokeshdhakar.com
  *
  * Thanks
  * ------
