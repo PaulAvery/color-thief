@@ -29,6 +29,10 @@
     "prepublish": "make test",
     "test": "make test"
   },
+  "dependencies": {
+    "canvas": "^1.2.2",
+    "quantize": "^1.0.1"
+  },
   "devDependencies": {
     "babel": "^5.1.13",
     "babelify": "^6.0.2",
@@ -36,7 +40,11 @@
     "eslint": "^0.20.0",
     "mocha": "^2.2.4",
     "must": "^0.12.0",
+    "uglify-js": "^2.4.20",
     "version-bump": "^0.1.0"
+  },
+  "browser": {
+    "canvas": "./src/browser/canvas.js"
   },
   "eslintConfig": {
     "env": {
@@ -56,8 +64,5 @@
     "ecmaFeatures": {
       "modules": true
     }
-  },
-  "dependencies": {
-    "quantize": "^1.0.1"
   }
 }
