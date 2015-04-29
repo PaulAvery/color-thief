@@ -1,10 +1,27 @@
 #Color Thief
 
-A script for grabbing the color palette from an image. Uses Javascript and the canvas tag to make it happen.
+A script for grabbing the color palette from an image. This is a fork of the original [color-thief](https://github.com/lokesh/color-thief/) library, modified to work in node as well as in the browser.
 
-[See a Demo](http://lokeshdhakar.com/projects/color-thief) | [Read more on my blog](http://lokeshdhakar.com/color-thief)
+Further changes have been made to code structure as well as tests and general organisation.
+
+A demo may be found on the original projects site: [lokeshdhakar.com](http://lokeshdhakar.com/projects/color-thief)
 
 ##How to use
+In node simply require:
+
+```js
+var ColorThief = require('@paulavery/color-thief')
+```
+
+In a browser simply reference the main file, which will provide `window.ColorThief`.
+
+```html
+<!-- installed via bower -->
+<script src="bower_components/color-thief/lib/browser.min.js"></script>
+
+<!-- installed via npm -->
+<script src="node_modules/color-thief/lib/browser.min.js"></script>
+```
 
 ###Get the dominant color from an image
 ```js
@@ -31,12 +48,20 @@ getPalette(sourceImage[, colorCount, quality])
 returns [ [num, num, num], [num, num, num], ... ]
 ```
 
+## Tests
+To run the tests, simply call `make test`.
+Tests may be found in the `test` directory and utilize [mocha](http://mochajs.org/) as well as [phantomjs](http://phantomjs.org/) for testing in the browser as well as node.
+
 ##Credits and license
 
 ###Author
 by Lokesh Dhakar  
-[lokeshdhakar.com](http://www.lokeshdhakar.com)  
+[lokeshdhakar.com](http://www.lokeshdhakar.com)
 [twitter.com/lokesh](http://twitter.com/lokesh)
+
+###Fork Maintainer
+Florian Albertz
+[Github](http://github.com/PaulAvery)
 
 ###Thanks
 * Nick Rabinowitz - For creating quantize.js.

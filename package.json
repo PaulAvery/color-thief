@@ -1,5 +1,5 @@
 {
-  "name": "color-thief",
+  "name": "@paulavery/color-thief",
   "description": "Get the dominant color or color palette from an image.",
   "version": "2.0.0",
   "main": "lib/ColorThief.js",
